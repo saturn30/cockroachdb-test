@@ -1,0 +1,13 @@
+{
+  "name": "cockroachdb-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/soso01/cockroachdb-test.git",
+  "author": "soso01 <soso01dev@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
