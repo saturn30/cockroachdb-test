@@ -16,9 +16,9 @@ export class UserController {
   }
 
   @Get(':id')
-  async getUesr(@Param('id') id: number) {
+  async getUesr(@Param('id') id: string) {
     const start = Date.now();
-    const result = await this.userService.findUserById(id);
+    const result = await this.userService.findUserById(BigInt(id));
     return {
       time: Date.now() - start,
       result,
