@@ -25,5 +25,10 @@ COPY --from=builder /app/out/full/ .
 RUN turbo run build --filter=@apps/server
 RUN turbo run prisma:generate
 
+FROM node:alpine AS runner
+WORKDIR /app
+
+COPY --from=installer /app .
+
 EXPOSE 3000
-CMD turbo run start:prod
+CMD node apps/server/dist/main
